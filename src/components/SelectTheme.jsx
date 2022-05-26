@@ -24,6 +24,10 @@ const color = theme.[colorPallet].mianBoxTextColor
     dispatch(selectTheme(event.target.value))
   };
 
+const StyledForm = styled(FormControl)`
+border:none;
+`;
+
   const StyledSelect = styled(Select)`
     color: ${theme.[colorPallet].mianBoxTextColor};
 
@@ -31,7 +35,7 @@ const color = theme.[colorPallet].mianBoxTextColor
   const customTheme = createTheme({
     pallet:{
       mine:{
-        main: "#ffff"
+        main: "green"
       }
     }
   })
@@ -45,7 +49,7 @@ const color = theme.[colorPallet].mianBoxTextColor
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 120}} color={customTheme.palette.mine}>
+      <StyledForm sx={{ m: 1, minWidth: 120}} >
         <InputLabel id="demo-simple-select-autowidth-label">Select Theme</InputLabel>
         <StyledSelect
           value={age}
@@ -60,7 +64,7 @@ const color = theme.[colorPallet].mianBoxTextColor
           <MenuItem value={"neatColor"}>neatColor</MenuItem>
 
         </StyledSelect>
-      </FormControl>
+      </StyledForm>
     </div>
   );
 }
