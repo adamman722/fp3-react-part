@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ThemeSliceReducer from "./features/ThemeSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import { ThemeProvider  } from "styled-components";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const store = configureStore({
+  reducer: {
+    theming: ThemeSliceReducer
+  }
+});
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ThemeProvider >
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
