@@ -1,11 +1,13 @@
 import "./App.css";
 import TopBar from "./components/TopBar";
 import SelectTheme from "./components/SelectTheme";
+import UnstyledSelectSimple from "./components/UnstyledSelectTheme";
 
 function App() {
   return (
     <div className="App">
       <SelectTheme />
+      <UnstyledSelectSimple />
       <TopBar />
       Spending - Last 7 days mon tue wed thu fri sat sun Total this month
       $478.33 +2.4% from last month
