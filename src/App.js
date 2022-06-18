@@ -1,5 +1,5 @@
 import "./App.css";
-import TopBar from "./components/TopBar";
+import TopBar from "./components/TopBar/TopBar.jsx";
 import SelectTheme from "./components/SelectTheme";
 import UnstyledSelectSimple from "./components/UnstyledSelectTheme";
 

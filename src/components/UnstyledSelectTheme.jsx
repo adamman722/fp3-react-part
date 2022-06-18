@@ -1,9 +1,9 @@
 import * as React from "react";
 import SelectUnstyled, {
-  selectUnstyledClasses
+  selectUnstyledClasses,
 } from "@mui/base/SelectUnstyled";
 import OptionUnstyled, {
-  optionUnstyledClasses
+  optionUnstyledClasses,
 } from "@mui/base/OptionUnstyled";
 import PopperUnstyled from "@mui/base/PopperUnstyled";
 import { styled } from "@mui/system";
@@ -14,7 +14,7 @@ const blue = {
   400: "#3399FF",
   500: "#007FFF",
   600: "#0072E5",
-  900: "#003A75"
+  900: "#003A75",
 };
 
 const grey = {
@@ -26,7 +26,7 @@ const grey = {
   600: "#6F7E8C",
   700: "#3E5060",
   800: "#2D3843",
-  900: "#1A2027"
+  900: "#1A2027",
 };
 
 const StyledButton = styled("button")(
@@ -130,7 +130,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
     Root: StyledButton,
     Listbox: StyledListbox,
     Popper: StyledPopper,
-    ...props.components
+    ...props.components,
   };
 
   return <SelectUnstyled {...props} ref={ref} components={components} />;
