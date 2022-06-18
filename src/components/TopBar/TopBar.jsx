@@ -14,6 +14,7 @@ function TopBar() {
     border-radius: 10px;
     color: ${theme?.[colorPallet].topBarTextColor};
     background-color: ${theme?.[colorPallet].topBarBackgroundColor};
+    justify-content: space-around;
   `;
 
   const CircleOutline = styled.div`
@@ -22,14 +23,22 @@ function TopBar() {
     width: 10%;
     height: 70px;
   `;
-
+  const CircleFull = styled.div`
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 10%;
+    height: 70px;
+  `;
   return (
     <SurroundingBox>
       <div>
         <h5> My balance </h5>
         <h1>$921.48</h1>
       </div>
-      <CircleOutline></CircleOutline>
+      <div style={{ display: "flex", width: "500px" }}>
+        <CircleOutline></CircleOutline>
+        <CircleFull></CircleFull>
+      </div>
     </SurroundingBox>
   );
 }
