@@ -9,7 +9,7 @@ function TopBar() {
 
   const SurroundingBox = styled.div`
     display: flex;
-    max-width: 300px;
+    min-width: 300px;
     height: 100%;
     margin: auto;
     padding: 20px;

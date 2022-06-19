@@ -12,11 +12,11 @@ export const theme = {
     onHoverColumnBox: "black",
     onHoverColumnBoxTest: "#fff",
     main: {
-      main: "blue"
-    }
+      main: "blue",
+    },
   },
   madness: {
-    mianBoxTextColor: "red"
+    mianBoxTextColor: "red",
   },
   neatColor: {
     backgroundColor: "hsl(27, 66%, 92%)",
@@ -30,6 +30,6 @@ export const theme = {
     highestValueColumnColor: "hsl(186, 34%, 60%)",
     onHoverColumnBox: "black",
     onHoverColumnBoxTest: "#fff",
-    main: "hsl(10, 79%, 65%)"
-  }
+    main: "hsl(10, 79%, 65%)",
+  },
 };
