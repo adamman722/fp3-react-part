@@ -19,6 +19,7 @@ function TopBar() {
     justify-content: space-between;
   `;
   // still need to add some dynamic color styles
+  // connect them up to the
   const TextContainer = styled.div`
     display: flex;
     flex-direction: column;

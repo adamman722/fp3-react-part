@@ -1,5 +1,6 @@
 import "./App.css";
 import TopBar from "./components/TopBar/TopBar.jsx";
+import MainBox from "./components/MainBox/MainBox.jsx";
 import SelectTheme from "./components/SelectTheme";
 import UnstyledSelectSimple from "./components/UnstyledSelectTheme";
 
@@ -8,8 +9,7 @@ function App() {
     <div className="App">
       <SelectTheme />
       <TopBar />
-      Spending - Last 7 days mon tue wed thu fri sat sun Total this month
-      $478.33 +2.4% from last month
+      <MainBox />
       <div class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
