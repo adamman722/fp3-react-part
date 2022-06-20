@@ -1,7 +1,7 @@
 {
   "name": "fp3-react-part",
   "version": "0.1.0",
-  "homepage": "https://adamman722.github.io/fp3-react-part/",
+  "homepage": "https://adamman722.github.io/fp3-react-part",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
