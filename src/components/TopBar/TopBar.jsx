@@ -1,6 +1,5 @@
 import react, { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectTheme } from "../../features/ThemeSlice";
 import styled, { useTheme } from "styled-components";
 
 function TopBar() {
@@ -10,8 +9,7 @@ function TopBar() {
   const SurroundingBox = styled.div`
     display: flex;
     min-width: 300px;
-    height: 100%;
-    margin: auto;
+    height: 50px;
     padding: 20px;
     border-radius: 10px;
     color: ${theme?.[colorPallet].topBarTextColor};
@@ -26,11 +24,12 @@ function TopBar() {
   `;
   const BalanceText = styled.p`
     font-size: 1rem;
+    opacity: 80%;
     margin: 0;
   `;
   const BalanceAmount = styled.p`
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.6px;
     padding-top: 10px;
     margin: 0;

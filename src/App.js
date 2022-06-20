@@ -3,19 +3,29 @@ import TopBar from "./components/TopBar/TopBar.jsx";
 import MainBox from "./components/MainBox/MainBox.jsx";
 import SelectTheme from "./components/SelectTheme";
 import UnstyledSelectSimple from "./components/UnstyledSelectTheme";
+import { useSelector } from "react-redux";
+
 //theming thingsss
 import styled, { useTheme } from "styled-components";
 function App() {
+  const theme = useTheme();
+  //redux grabbing the state of the colors
+  const colorPallet = useSelector((state) => state.theming.value);
+  //colors
+  const backgroundColor = theme?.[colorPallet].backgroundColor;
   const App = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    background-color: ${backgroundColor};
+    height: 100vh;
+    margin: 0;
+    gap: 20px;
+    align-items: center;
+    padding-top: 20px;
   `;
 
   return (
     <App>
-      <SelectTheme />
       <TopBar />
       <MainBox />
       <div class="attribution">
@@ -25,6 +35,7 @@ function App() {
         </a>
         . Coded by <a href="#">Adam Tarpey</a>.
       </div>
+      <SelectTheme />
     </App>
   );
 }

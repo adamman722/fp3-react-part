@@ -2,91 +2,92 @@ import react, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectTheme } from "../../features/ThemeSlice";
 import styled, { useTheme } from "styled-components";
-//this is for the bar chart
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import Chart from "./Chart/Chart";
+//this is for the bar chart
+
+//apparently you need this for the react crap to work
+
 const MainBox = () => {
   const theme = useTheme();
+  //redux grabbing the state of the colors
   const colorPallet = useSelector((state) => state.theming.value);
-  const columnColor = theme?.[colorPallet].columnColor;
-  const highestColumnColor = theme?.[colorPallet].highestValueColumnColor;
+  //colors
+  const mianBoxBackgroundColor = theme?.[colorPallet].mianBoxBackgroundColor;
+  const backgroundColor = theme?.[colorPallet].backgroundColor;
 
   const MainBoxContainer = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 300px;
-
     padding: 20px;
     border-radius: 10px;
-    margin: auto;
-    background-color: white;
+    background-color: ${mianBoxBackgroundColor};
   `;
-  const labels = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-  const data = {
-    labels,
-    datasets: [
-      {
-        data: [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48],
-        backgroundColor: [
-          columnColor,
-          columnColor,
-          highestColumnColor,
-          columnColor,
-          columnColor,
-          columnColor,
-          columnColor,
-        ],
-        borderRadius: 3,
-        borderSkipped: false,
-      },
-    ],
-  };
-  const options = {
-    responsive: false,
-    scales: {
-      y: {
-        display: false,
-      },
-      x: {
-        grid: {
-          display: false,
-          borderWidth: 0,
-          tickLength: 5,
-        },
-        ticks: {
-          padding: 3,
-        },
-      },
-    },
-    plugins: {
-      legend: {
-        position: "hidden",
-      },
-    },
-  };
+
+  const Spending = styled.div`
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 20px;
+  `;
+  const BottomContainer = styled.div`
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-between;
+  `;
+  const BottomInnerContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  `;
+  const BottomInnerContainerRight = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0px;
+    text-align: right;
+  `;
+
+  const BottomText = styled.p`
+    font-size: 16px;
+    opacity: 60%;
+    margin: 0;
+  `;
+  const BottomAmount = styled.p`
+    font-size: 1.7rem;
+    margin: 0;
+    font-weight: 700;
+    text-align: left;
+  `;
+  const BottomPercent = styled.p`
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 700;
+  `;
+
   return (
     <MainBoxContainer>
-      <div>Spending - Last 7 days</div>
-      <Bar options={options} data={data} height="200" />
+      <Spending>Spending - Last 7 days</Spending>
+      <Chart />
+      <hr
+        style={{
+          border: "none",
+          borderTop: `1px solid ${backgroundColor}`,
+          width: "100%",
+        }}
+      />
+      <BottomContainer>
+        <BottomInnerContainer>
+          <BottomText>Total this month </BottomText>
+          <BottomAmount>$478.33</BottomAmount>
+        </BottomInnerContainer>
 
-      <div>Total this month $478.33 +2.4% from last month</div>
+        <BottomInnerContainerRight>
+          <BottomPercent>+2.4% </BottomPercent>
+          <BottomText>from last month</BottomText>
+        </BottomInnerContainerRight>
+      </BottomContainer>
     </MainBoxContainer>
   );
 };
