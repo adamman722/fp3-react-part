@@ -1,7 +1,7 @@
 {
   "name": "fp3-react-part",
   "version": "0.1.0",
-  "homepage": "https://adamman722.github.io/fp3-react-part",
+  "homepage": "http://adamman722.github.io/fp3-react-part",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -22,9 +22,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "fp3-react-part -d build",
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
