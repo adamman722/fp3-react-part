@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fp3-react-part/static/css/main.e2a0e8c7.css",
+    "main.js": "/fp3-react-part/static/js/main.5bfd70ac.js",
+    "static/js/787.b6eba5c7.chunk.js": "/fp3-react-part/static/js/787.b6eba5c7.chunk.js",
+    "index.html": "/fp3-react-part/index.html",
+    "main.e2a0e8c7.css.map": "/fp3-react-part/static/css/main.e2a0e8c7.css.map",
+    "main.5bfd70ac.js.map": "/fp3-react-part/static/js/main.5bfd70ac.js.map",
+    "787.b6eba5c7.chunk.js.map": "/fp3-react-part/static/js/787.b6eba5c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2a0e8c7.css",
+    "static/js/main.5bfd70ac.js"
+  ]
+}
